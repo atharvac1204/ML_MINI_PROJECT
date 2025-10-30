@@ -15,11 +15,9 @@ def clean_text(text):
 
 @st.cache_resource
 def load_model():
-    with open('../models/model.pkl', 'rb') as f:
+    with open('models/model.pkl', 'rb') as f:
         saved = pickle.load(f)
-    model = saved['model']
-    vectorizer = saved['vectorizer']
-    return model, vectorizer
+    return saved['model'], saved['vectorizer']
 
 # -------------------------
 # Streamlit App
